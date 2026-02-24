@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const STORAGE_KEY = "products";
 let products = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 function save() {
@@ -29,6 +27,7 @@ function render() {
       Min: ${p.min} |
       Staatus: ${status(p)}
       <button data-id="${p.id}">X</button>
+
     `;
         row.querySelector("button").onclick = () => {
             products = products.filter(x => x.id !== p.id);
@@ -89,4 +88,3 @@ filter.onchange = render;
 sortDir.onchange = render;
 app.append(nameInput, qtyInput, minInput, addBtn, document.createElement("hr"), search, filter, sortDir, document.createElement("hr"), list);
 render();
-//# sourceMappingURL=main.js.map
