@@ -27,7 +27,6 @@ function render() {
       Min: ${p.min} |
       Staatus: ${status(p)}
       <button data-id="${p.id}">X</button>
-
     `;
         row.querySelector("button").onclick = () => {
             products = products.filter(x => x.id !== p.id);
